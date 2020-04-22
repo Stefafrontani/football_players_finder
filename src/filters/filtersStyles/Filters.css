@@ -1,0 +1,74 @@
+:root {
+  --form-transition-time: 0.2s;
+}
+
+input:not([type="submit"]) {
+  padding: 3px 5px; /* same as input ~ label left (*) */
+  border-bottom: 1px solid rgb(75, 75, 230, 0.2);
+}
+
+input[type="submit"] {
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+}
+
+/* Place label absolute  */
+input ~ label {
+  top: 50%;
+  left: 3px; /* (*) */
+  transform: translate(0, -50%);
+  transition: transform var(--form-transition-time), top var(--form-transition-time), left var(--form-transition-time), color var(--form-transition-time);
+}
+
+/* Move label when input focus  */
+input:focus ~ label,
+input.has-value ~ label {
+  top: -60%;
+  left: 0px;
+  transform: scale(0.8);
+  transition: transform var(--form-transition-time), top var(--form-transition-time), left var(--form-transition-time), color var(--form-transition-time);
+  color: rgb(75, 75, 230);
+}
+
+/* Fake border bottom growth */
+.field-container {} /*  */
+.field-container input ~ span {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0%;
+  height: 1px;
+  width: 0px;
+  background-color: rgb(75, 75, 230);
+
+}
+.field-container input:focus ~ span,
+.field-container input.has-value ~ span {
+  width: 100%;
+  transition: width var(--form-transition-time);
+}
+
+input.wrong-value ~ span {
+  background-color: rgb(185, 76, 76);
+}
+
+input[name="name"].wrong-value ~ span:after {
+  content: "Please, only text"
+}
+input[name="age"].wrong-value ~ span:after {
+  content: "Please, only numbers between 18-40";
+  width: 200px;
+}
+
+input.wrong-value ~ span:after {
+  width: 100%;
+  position: absolute;
+  text-align:left;
+  top: 30%;
+  margin-top: 4px;
+  font-size: 10px;
+  color: rgb(185, 76, 76);
+  left: 0;
+}

@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Filters /> Snapasdhot 1`] = `
+<div
+  className="mb16"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <form
+    className="flex flex-row flex-items-center flex-content-center"
+    onSubmit={[Function]}
+  >
+    <div
+      className="mr16 field-container position-relative"
+    >
+      <input
+        id="name"
+        name="name"
+        onChange={[Function]}
+        pattern="[A-Za-z]([A-Za-z]|[' '](?=[A-Za-z]))+|[A-Za-z]"
+        type="text"
+      />
+      <span />
+      <label
+        className="position-absolute fs15"
+        htmlFor="name"
+      >
+         Name 
+      </label>
+    </div>
+    <div
+      className="mr16 field-container position-relative"
+    >
+      <input
+        id="position"
+        name="position"
+        onChange={[Function]}
+        type="text"
+      />
+      <span />
+      <label
+        className="position-absolute fs15"
+        htmlFor="position"
+      >
+         Position 
+      </label>
+    </div>
+    <div
+      className="mr16 field-container position-relative"
+    >
+      <input
+        id="age"
+        max="40"
+        min="18"
+        name="age"
+        onChange={[Function]}
+        type="number"
+      />
+      <span />
+      <label
+        className="position-absolute fs15"
+        htmlFor="age"
+      >
+         Age 
+      </label>
+    </div>
+    <input
+      type="submit"
+    />
+  </form>
+</div>
+`;
